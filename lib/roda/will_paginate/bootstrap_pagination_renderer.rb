@@ -30,6 +30,11 @@ class Roda
       def html_container(html)
         tag(:ul, html, container_attributes)
       end
+
+      def gap
+        text = @template.will_paginate_translate(:page_gap) { '&hellip;' }
+        %(<li><span class="gap">#{text}</span></li>)
+      end
     end
   end
 end
